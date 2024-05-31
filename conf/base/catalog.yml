@@ -7,3 +7,7 @@
 
 # Les résultats de l'entraînement, de l'évaluation et de la prédiction
 
+model:
+  type: pickle.PickleDataset
+  filepath: data/02_models/yolo.pickle
+  versioned: true

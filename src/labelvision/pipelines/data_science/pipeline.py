@@ -12,7 +12,7 @@ def create_pipeline(**kwargs) -> Pipeline:
         node(
             func=train_yolo,
             inputs=dict(data_yaml="params:data_yaml", img_size="params:img_size", epochs="params:epochs"),
-            outputs=None,
+            outputs="model",
             name="train_yolo_node"
         )
     ])

@@ -2,3 +2,8 @@
 #
 # Documentation for this file format can be found in "The Data Catalog"
 # Link: https://docs.kedro.org/en/stable/data/data_catalog.html
+
+# conf/base/catalog.yml
+
+# Les résultats de l'entraînement, de l'évaluation et de la prédiction
+

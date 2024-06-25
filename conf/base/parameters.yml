@@ -4,3 +4,5 @@ batch_size: 16
 epochs: 2
 path: "data/02_models"
 path_model: "data/06_models/model.pt"
+path_image_test: "data/02_img_test/img.jpg"
+path_result_predict: "data/02_img_test/result.jpg"

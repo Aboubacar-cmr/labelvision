@@ -1,4 +1,6 @@
 data_yaml: "data/data.yaml"
-img_size: 640
+img_size: 500
 batch_size: 16
 epochs: 2
+path: "data/02_models"
+path_model: "data/06_models/model.pt"

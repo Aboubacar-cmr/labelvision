@@ -7,7 +7,7 @@ import torch
 #   mlflow.pytorch.autolog()
 
 
-def train_yolo(data_yaml: str, img_size: int, epochs: int, gpu_id: int = 0):
+def train_yolo(data_yaml: str, img_size: int, epochs: int, model_path: str, gpu_id: int = 0):
     # Assurez-vous que CUDA est disponible et sélectionnez le GPU
     if torch.cuda.is_available():
         device = torch.device(f'cuda:{gpu_id}')
@@ -18,4 +18,4 @@ def train_yolo(data_yaml: str, img_size: int, epochs: int, gpu_id: int = 0):
 
     model = YOLO("yolov5n.pt").to(device)
     result = model.train(data=os.path.join(os.getcwd(), data_yaml), epochs=epochs, imgsz=img_size, device=device)
-    return model
+    model.save(model_path)

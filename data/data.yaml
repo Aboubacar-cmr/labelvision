@@ -1,0 +1,13 @@
+train: ./01_raw/train
+val: ./01_raw/valid
+test: ./01_raw/test
+
+nc: 18
+names: ['Raccoon', 'bear', 'buffalo', 'bycicle', 'car', 'clock', 'cow', 'deer', 'dog', 'eagle', 'elephant', 'gaur', 'otherentities', 'person', 'pig', 'tiger', 'umbrella', 'wolf']
+
+roboflow:
+  workspace: ultimate-0fe1g
+  project: elephants_16
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/ultimate-0fe1g/elephants_16/dataset/1

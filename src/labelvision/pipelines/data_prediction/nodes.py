@@ -10,21 +10,6 @@ import torch
 import cv2
 import tensorflow as tf
 
-def prediction2(image_path: str, model_path: str, path_result: str):
-    # Charger le modèle YOLO
-    model = YOLO(model_path)
-
-    # Faire des prédictions
-    results = model.predict(image_path, save=True, imgsz=320, conf=0.1)
-
-    for r in results:
-        print(r.boxes) 
-
-
-
-
-
-
 
 
 
@@ -57,5 +42,15 @@ def prediction(image_path: str, model_path: str, path_result: str):
     
     # Sauvegarder l'image annotée
     cv2.imwrite(path_result, image)
-    
-    return results
+
+
+
+def prediction2(image_path: str, model_path: str, path_result: str):
+    # Charger le modèle YOLO
+    model = YOLO(model_path)
+
+    # Faire des prédictions
+    results = model.predict(image_path, save=True, imgsz=320, conf=0.1)
+
+    for r in results:
+        print(r.boxes) 

@@ -19,3 +19,19 @@ def train_yolo(data_yaml: str, img_size: int, epochs: int, model_path: str, gpu_
     model = YOLO("yolov5n.pt").to(device)
     result = model.train(data=os.path.join(os.getcwd(), data_yaml), epochs=epochs, imgsz=img_size, device=device)
     model.save(model_path)
+
+    print("------------------------------------------------")
+    print(type(result))
+    print("------------------------------------------------")
+
+     # Afficher les métriques après l'entraînement
+    print("Training completed. Here are the metrics:")
+
+  
+    # Afficher toutes les métriques disponibles dans result
+    print("\nDetailed metrics:")
+    for key, value in vars(result).items():
+        print(f"{key}: {value}")
+
+
+   

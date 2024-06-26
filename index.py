@@ -3,9 +3,8 @@ from flask import Flask, request, jsonify, send_file
 from kedro.framework.startup import bootstrap_project
 from kedro.framework.session import KedroSession
 from pathlib import Path
-import pandas as pd
 
-app = Flask(__name__)
+server = Flask(__name__)
 
 # Définir le chemin du projet Kedro
 project_path = Path(__file__).resolve().parent
@@ -15,13 +14,13 @@ metadata = bootstrap_project(project_path)
 
 
 # Route par défaut
-@app.route("/")
+@server.route("/")
 def index():
     return "Bienvenue à l'API de detection d'animaux dans une image"
 
 
-# Route pour l'entraînement (ou ré-entraînement) du modèle
-@app.route("/api/train", methods=["GET"])
+# Route pour l'entraînement du modèle Yolo
+@server.route("/api/train", methods=["GET"])
 def train():
     with KedroSession.create(project_path=project_path) as session:
         session.run(pipeline_name="__default__")
@@ -31,7 +30,7 @@ def train():
 
 
 # Route pour obtenir des prédictions du modèle
-@app.route("/api/predict", methods=["POST"])
+@server.route("/api/predict", methods=["POST"])
 def predict():
     # Vérifier si le fichier est dans la requête
     if 'file' not in request.files:
@@ -61,4 +60,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=5002, debug=True)
+    server.run(host='127.0.0.1', port=5002, debug=True)

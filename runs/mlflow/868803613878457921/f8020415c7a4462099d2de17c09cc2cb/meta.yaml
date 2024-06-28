@@ -1,0 +1,15 @@
+artifact_uri: file:///C:/Users/aa-dz/OneDrive/Bureau/Master2/11_-_Orchestration/27062024_1856/labelvision-main/labelvision-main/runs/mlflow/868803613878457921/f8020415c7a4462099d2de17c09cc2cb/artifacts
+end_time: 1719569551074
+entry_point_name: ''
+experiment_id: '868803613878457921'
+lifecycle_stage: active
+run_id: f8020415c7a4462099d2de17c09cc2cb
+run_name: train20
+run_uuid: f8020415c7a4462099d2de17c09cc2cb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1719569500474
+status: 3
+tags: []
+user_id: aa-dz

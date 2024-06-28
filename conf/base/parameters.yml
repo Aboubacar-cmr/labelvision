@@ -1,8 +1,12 @@
 data_yaml: "data/data.yaml"
-img_size: 300
-batch_size: 15
-epochs: 2
+img_size: 640
+batch_size: 16
+epochs: 10
 path: "data/02_models"
 path_model: "data/06_models/model.pt"
 path_image_test: "data/02_img_test/img.jpg"
 path_result_predict: "data/02_img_test/result.jpg"
+results_csv: "runs/detect/train18/results.csv"
+metrics_output_path: "runs/detect/train18/metrics.txt"
+model_path: "data/06_models/best.pt"
+

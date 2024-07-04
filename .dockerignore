@@ -1,0 +1,5 @@
+# Ignorer les fichiers de log
+*.log
+
+# Ignorer tous le contenu data/01_raw
+data/01_raw/

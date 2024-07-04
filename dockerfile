@@ -1,17 +1,15 @@
-# Utiliser une image de base officielle Python 3.10.12
-FROM python:3.10-slim
+FROM python:3.10
 
-# Définir le répertoire de travail dans le conteneur
 WORKDIR /app
 
-# Copier le fichier requirements.txt et installer les dépendances
-COPY requirements.txt req.txt
-RUN pip install --no-cache-dir -r req.txt
+RUN apt-get update && apt-get install -y \
+    libgl1-mesa-glx \
+    libglib2.0-0
 
-# Copier le reste de votre application dans le conteneur
+COPY requirements.txt requirements.txt
+
+RUN pip3 install -r requirements.txt && rm requirements.txt
+
 COPY . .
 
-# Exposer le port sur lequel l'application Flask s'exécute
-EXPOSE 5002
-
-CMD ["python", "index.py"]
+CMD ["gunicorn", "-b", "0.0.0.0:8050", "--reload", "index:server"]

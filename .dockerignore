@@ -3,3 +3,7 @@
 
 # Ignorer tous le contenu data/01_raw
 data/01_raw/
+
+# Ignore venv
+.venv
+__pycache__

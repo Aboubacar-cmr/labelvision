@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: labelvision-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: labelvision-app
+  template:
+    metadata:
+      labels:
+        app: labelvision-app
+    spec:
+      containers:
+      - name: labelvision-app
+        image: aaricia/labelvision:v1
+        ports:
+        - containerPort: 8050

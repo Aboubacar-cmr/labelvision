@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: labelvision-app
+spec:
+  type: LoadBalancer  # Type de service NodePort
+  selector:
+    app: labelvision-app   # Sélectionne les pods avec l'étiquette 'app: my-app'
+  ports:
+    - protocol: TCP
+      port: 8000     # Port exposé sur le service
+      targetPort: 8050  # Port sur le conteneur cible
